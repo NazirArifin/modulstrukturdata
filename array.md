@@ -224,7 +224,7 @@ print_r($angka2); // Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 )
 
 ## Praktikum
 
-- Pprogram untuk menghitung jumlah huruf vokal dan konsonan dari sebuah kalimat
+- Program untuk menghitung jumlah huruf vokal dan konsonan dari sebuah kalimat
 ```php
 <?php
 $kalimat = "Saya sedang belajar PHP";
