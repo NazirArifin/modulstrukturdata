@@ -1,6 +1,6 @@
 # Modul 2 - Stack -- Evaluasi Ekspresi Aritmatika
 
-Tujuan Pembelajaran: Mahasiswa dapat memahami operasi-operasi dasar yang ada dalam stack serta dapat menggunakannya dengan baik
+Tujuan Pembelajaran: Mahasiswa dapat memahami penggunaan stack dalam evaluasi ekspresi aritmatika dengan baik
 
 ## Persiapan
 
