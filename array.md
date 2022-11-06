@@ -65,7 +65,7 @@ $angka = [1, 2, 3, 4, 5];
 unset($angka[0]);
 array_splice($angka, 1, 1);
 echo count($angka); // 3
-$angka = [];
+$angka = []; // kosongkan array
 ```
 
 - Perbedaan dari fungsi ```unset``` dan ```array_splice``` adalah fungsi ```unset``` hanya menghapus elemen array dengan key yang diinginkan, sedangkan fungsi ```array_splice``` menghapus elemen array dengan key yang diinginkan dan kemudian mengurutkan key array.
@@ -289,8 +289,6 @@ echo "Jumlah huruf konsonan: " . $jumlahKonsonan . PHP_EOL;
 - Buat program yang menggunakan fungsi __`array_filter()`__ untuk menghapus semua angka ganjil pada sebuah array
 - Buat program yang menggunakan fungsi __`array_reduce()`__ untuk menghitung jumlah semua angka pada sebuah array
 - Buat program yang menggunakan fungsi __`array_column()`__ untuk mengambil kolom nama dari array multi dimensi
-- Buat program yang menggunakan fungsi __`array_flip()`__ untuk menukar key dan value dari array
-- Buat program yang menggunakan fungsi __`array_unique()`__ untuk menghapus elemen array yang duplikat
 
 ## Tugas 2
 
