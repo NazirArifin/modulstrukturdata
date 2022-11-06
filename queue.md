@@ -5,7 +5,7 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami dan menerapkan konsep queue dalam 
 ## Persiapan
 
 - Berdoa agar lancar dalam belajar, bagi yang membawa hp harap hp nya di _silence_ atau sekalian dimatikan
-- Jika ada pertanyaan silahkan tanyakan kepada dosen praktikum, tapi sebelumnya pastikan sudah membaca materi yang ada di modul ini, jangan dikit-dikit tanya karena berarti: "ente kadang-kadang ente, uwarr.."
+- Jika ada pertanyaan silahkan tanyakan kepada dosen praktikum, tapi sebelumnya pastikan sudah membaca materi yang ada di modul ini, jangan dikit-dikit tanya karena berarti: "ente kadang-kadang ente, wrrr.."
 
 ## Materi
 
@@ -119,5 +119,5 @@ try {
 
 ## Tugas
 
-- Buat class turunan dari class __Queue__ yang memodifikasi method __dequeue()__ sehingga __head__ tidak bergeser ke elemen berikutnya, namun __tail__ yang menggeser ke elemen berikutnya.
+- Buat class turunan dari class __Queue__ yang memodifikasi method __dequeue()__ sehingga __head__ tidak bergeser ke elemen berikutnya, namun elemen lain dan __tail__ yang menggeser ke kiri.
 - Buat class __Queque__ yang mengimplementasikan __enqueue()__ dan __dequeue()__ menggunakan class __Stack__ yang ada pada modul sebelumnya dimana terdapat dua buah stack, yaitu __stack1__ dan __stack2__, dan __enqueue()__ dan __dequeue()__ menggunakan dua buah stack tersebut.
