@@ -1,4 +1,4 @@
-# Modul 2 - Stack -- Evaluasi Ekspresi Aritmatika
+# Modul 3 - Stack -- Evaluasi Ekspresi Aritmatika
 
 Tujuan Pembelajaran: Mahasiswa dapat memahami penggunaan stack dalam evaluasi ekspresi aritmatika dengan baik
 
@@ -65,8 +65,8 @@ class Stack {
 
   public function push($item) {
     if ($this->height < $this->limit) {
-      $this->height++;
       $this->stack[$this->height] = $item;
+      $this->height = $this->height + 1;
     } else {
       // STACK OVERFLOW
       throw new RunTimeException('Stack is full!');

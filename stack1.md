@@ -1,4 +1,4 @@
-# Modul 1 - Stack -- Operasi Dasar Stack
+# Modul 2 - Stack -- Operasi Dasar Stack
 
 Tujuan Pembelajaran: Mahasiswa dapat memahami operasi-operasi dasar yang ada dalam stack serta dapat menggunakannya dengan baik
 
@@ -10,7 +10,7 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami operasi-operasi dasar yang ada dal
 
 ### Stack
 
-- Stack merupakan kumpulan data yang diatas data yang lain seperti sebuah tumpukan. Dengan demikian stack merupakan struktur data yang menerapkan prinsip __LIFO__ (_Last In First Out_) atau data yang masuk terakhir akan dikeluarkan pertama kali.
+- Stack merupakan kumpulan data yang diletakkan diatas data yang lain seperti sebuah tumpukan. Dengan demikian stack merupakan struktur data yang menerapkan prinsip __LIFO__ (_Last In First Out_) atau data yang masuk terakhir akan dikeluarkan pertama kali.
 
 - Untuk menambahkan data pada bagian atas tumpukan dilakukan operasi __push__, sedangkan untuk menghapus atau memindahkan data dari tempat atas maka dilakukan operasi __pop__.
 
@@ -32,10 +32,10 @@ class Stack {
 
   public function push($item) {
     if ($this->height < $this->limit) {
-      // set tinggi stack
-      $this->height++;
       // masukkan item ke dalam stack
       $this->stack[$this->height] = $item;
+      // set tinggi stack
+      $this->height = $this->height + 1;
     } else {
       throw new RunTimeException('Stack is full!');
     }
