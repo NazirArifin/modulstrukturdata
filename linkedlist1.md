@@ -21,7 +21,7 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami operasi-operasi dasar yang ada dal
 
 ### Jenis Linked List
 
-- __Simple LInked List__: Linked list yang hanya memiliki pointer ke node selanjutnya.
+- __Simple Linked List__: Linked list yang hanya memiliki pointer ke node selanjutnya.
 - __Doubly Linked List__: Linked list yang memiliki pointer ke node selanjutnya dan node sebelumnya.
 - __Circular Linked List__: Linked list yang memiliki pointer ke node selanjutnya dan node sebelumnya. Pointer pada node terakhir akan menunjuk ke node pertama.
 
@@ -33,7 +33,7 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami operasi-operasi dasar yang ada dal
 
 ## Praktikum
 
-- Buat file __"Node.php" dan ketikkan kode berikut:
+- Buat file __"Node.php"__ dan ketikkan kode berikut:
 
 ```php
 <?php
