@@ -65,17 +65,19 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami operasi-operasi dasar yang ada dal
 
 ### Praktikum
 
-- Kita akan membuat program untuk menghitung jumlah node, jumlah leaf, dan jumlah tinggi dari tree. Pertama kali kita buat class __"Node"__ di file __"Node.php"__ yang berisi property __"data"__ dan __"children"__ yang merupakan array yang berisi node-node yang merupakan child dari node tersebut. Kemudian kita buat method __"__construct"__ yang akan menginisialisasi property __"data"__ dan __"children"__.
+- Kita akan membuat program untuk menghitung jumlah node, jumlah leaf, dan jumlah tinggi dari tree. Pertama kali kita buat class __"Node"__ di file __"Node.php"__ yang berisi property __"data"__ dan __"children"__ yang merupakan array yang berisi node-node yang merupakan child dari node tersebut.
 
 ```php
 <?php
 class Node {
   private mixed $data;
   private array $children;
+  private ?Node $parent;
 
   public function __construct(mixed $data) {
     $this->data = $data;
     $this->children = [];
+    $this->parent = null;
   }
 
   public function addChild(Node $child): void {
@@ -95,8 +97,138 @@ class Node {
   public function getChildren(): array {
     return $this->children;
   }
+
+  public function hasChildren(): bool {
+    return count($this->children) > 0;
+  }
+
+  public function setParent(Node $parent): void {
+    $this->parent = $parent;
+  }
+
+  public function getParent(): ?Node {
+    return $this->parent;
+  }
 }
 ```
 
-- Kemudian kita buat class __"Tree"__ di file __"Tree.php"__ yang berisi property __"root"__ yang merupakan node root dari tree. Kemudian kita buat method __"__construct"__ yang akan menginisialisasi property __"root"__.
+- Kemudian kita buat class __"Tree"__ di file __"Tree.php"__ yang berisi property __"root"__ yang merupakan node root dari tree.
 
+```php
+<?php
+class Tree {
+  private Node $root;
+
+  public function __construct(Node $root) {
+    $this->root = $root;
+  }
+
+  public function getRoot(): Node {
+    return $this->root;
+  }
+  
+  // insert
+  public function insert(Node $node, Node $parent): void {
+    $parent->addChild($node);
+  }
+
+  // delete
+  public function delete(Node $node): void {
+    $node->getParent()->removeChild($node);
+  }
+
+  // search
+  public function search(Node $node, mixed $data): ?Node {
+    if ($node->getData() === $data) {
+      return $node;
+    }
+
+    foreach ($node->getChildren() as $child) {
+      $found = $this->search($child, $data);
+      if ($found) {
+        return $found;
+      }
+    }
+
+    return null;
+  }
+
+  // traverse
+  public function traverse(Node $node, callable $callback): void {
+    $callback($node);
+
+    foreach ($node->getChildren() as $child) {
+      $this->traverse($child, $callback);
+    }
+  }
+}
+```
+
+- Pada file __"Tree.php"__ terdapat beberapa method untuk melakukan operasi dasar dalam tree yaitu:
+  
+    - __insert__: untuk menambahkan node baru ke dalam tree
+    - __delete__: untuk menghapus node dari tree
+    - __search__: untuk mencari node dalam tree
+    - __traverse__: untuk melakukan traversal tree
+
+- Kemudian kita buat file __"index.php"__ untuk menjalankan program yang memanfaatkan class __"Tree"__ dan __"Node"__.
+
+```php
+<?php
+spl_autoload_register(function ($class) {
+  require_once $class . '.php';
+});
+
+$a = new Node('A');
+$tree = new Tree($a);
+
+$b = new Node('B');
+$c = new Node('C');
+$d = new Node('D');
+$e = new Node('E');
+$f = new Node('F');
+$g = new Node('G');
+
+$tree->insert($b, $a);
+$tree->insert($c, $a);
+
+$tree->insert($d, $b);
+$tree->insert($e, $b);
+
+$tree->insert($f, $c);
+$tree->insert($g, $c);
+
+echo 'Parent tiap node adalah: ' . PHP_EOL;
+$tree->traverse($tree->getRoot(), function ($node) {
+  if ($node->getParent()) {
+    echo $node->getData() . ' -> ' . $node->getParent()->getData() . PHP_EOL;
+  }
+});
+echo PHP_EOL;
+
+echo 'Children setiap node adalah: ' . PHP_EOL;
+$tree->traverse($tree->getRoot(), function ($node) {
+  if ($node->hasChildren()) {
+    echo $node->getData() . ' -> ' . implode(', ', array_map(function ($child) {
+      return $child->getData();
+    }, $node->getChildren())) . PHP_EOL;
+  }
+});
+echo PHP_EOL;
+
+echo 'Mencari parent node dengan data E: ' . PHP_EOL;
+$found = $tree->search($tree->getRoot(), 'E');
+if ($found) {
+  echo $found->getData() . ' -> ' . $found->getParent()->getData() . PHP_EOL;
+}
+```
+
+- Pada file __"index.php"__ diatas, kita membuat node __"A"__ sebagai root dari tree. Kemudian kita membuat node __"B"__, __"C"__, __"D"__, __"E"__, __"F"__, dan __"G"__. Kemudian kita memasukkan node-node tersebut ke dalam tree dengan memanggil method __"insert"__ yang ada di class __"Tree"__.
+
+- Kemudian kita melakukan traversal tree dengan memanggil method __"traverse"__ yang ada di class __"Tree"__.
+
+- Jika semua berjalan dengan baik, maka Anda akan melihat isi dari tree yang telah buat.
+
+## Tugas
+
+- Buatlah class turunan dari __"Tree"__ dan tambahkan method untuk menghitung jumlah node, jumlah leaf, dan jumlah tinggi dari tree.
