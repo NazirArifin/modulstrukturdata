@@ -121,12 +121,12 @@ class Converter {
     ')' => 0
   ];
 
-  public function __construct($infix) {
+  public function __construct(string $infix) {
     $this->infix = $infix;
   }
 
   // operand = [0-9], atau [a-z]
-  private function isOperand($char): bool {
+  private function isOperand(string $char): bool {
     $char = strtolower($char);
     // ord adalah fungsi untuk mengubah karakter menjadi kode ASCII
     // 97-122 adalah kode ASCII untuk huruf a-z
@@ -134,11 +134,11 @@ class Converter {
     return (ord($char) >= 97 && ord($char) <= 122) || (ord($char) >= 48 && ord($char) <= 57);
   }
 
-  private function isOperator($char): bool {
+  private function isOperator(string $char): bool {
     return ($char == '+' || $char == '-' || $char == '*' || $char == '/' || $char == '^' || $char == '(' || $char == ')');
   }
 
-  private function hasHigherPrecedence($operator1, $operator2): bool {
+  private function hasHigherPrecedence(string $operator1, string $operator2): bool {
     return ($this->precedence[$operator1] > $this->precedence[$operator2]);
   }
 
@@ -201,7 +201,7 @@ class Converter {
     return $outputStack->toString();
   }
 
-  private function reverseInfix($infix): string {
+  private function reverseInfix(string $infix): string {
     // reverse infix, lalu ganti '(' dengan ')' dan sebaliknya
     $reverse = '';
     for ($i = strlen($infix) - 1; $i >= 0; $i--) {

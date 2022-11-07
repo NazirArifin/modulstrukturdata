@@ -38,8 +38,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami operasi-operasi dasar yang ada dal
 ```php
 <?php
 class Node {
-  private ? Node $next;
-  private mixed $data;
+  private ? Node $next;  // tanda ? berarti boleh null
+  private mixed $data; // mixed berarti boleh berbagai tipe data
 
   public function __construct(mixed $data) {
     $this->data = $data;
@@ -213,17 +213,21 @@ spl_autoload_register(function ($class_name) {
   include $class_name . '.php';
 });
 
-$linkedlist = new LinkedList();
-$linkedlist->insertFirst(new Node("A"));
-$linkedlist->insertFirst(new Node("B"));
-$linkedlist->insertFirst(new Node("C"));
+try {
+  $linkedlist = new LinkedList();
+  $linkedlist->insertFirst(new Node("A"));
+  $linkedlist->insertFirst(new Node("B"));
+  $linkedlist->insertFirst(new Node("C"));
 
-$linkedlist->insertLast(new Node("D"));
-$linkedlist->print();
+  $linkedlist->insertLast(new Node("D"));
+  $linkedlist->print();
 
-$linkedlist->deleteLast();
-$linkedlist->deleteAt(2);
-$linkedlist->print();
+  $linkedlist->deleteLast();
+  $linkedlist->deleteAt(2);
+  $linkedlist->print();
+} catch (Exception $e) {
+  echo $e->getMessage();
+}
 ```
 
 - Jalankan kode di atas dengan perintah __"php index.php"__ dan jika berhasil maka Anda akan melihat hasil operasi linked list yang sudah kita kerjakan.
@@ -231,7 +235,6 @@ $linkedlist->print();
 ## Tugas
 
 - Buat class __Stack__ yang memiliki method __push()__, __pop()__, dan __print()__ yang menggunakan linked list sebagai struktur data dasarnya.
-- Buat class __Queue__ yang memiliki method __enqueue()__, __dequeue()__, dan __print()__ yang menggunakan linked list sebagai struktur data dasarnya.
 
 
 
