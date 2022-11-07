@@ -25,23 +25,23 @@ class Stack {
   private int $limit;
   private int $height = 0;
 
-  public function __construct($limit = 10) {
+  public function __construct(int $limit = 10) {
     // set batas stack
     $this->limit = $limit;
   }
 
-  public function push($item) {
+  public function push(mixed $item): void {
     if ($this->height < $this->limit) {
+      // set tinggi baru stack
+      $this->height = $this->height + 1;
       // masukkan item ke dalam stack
       $this->stack[$this->height] = $item;
-      // set tinggi stack
-      $this->height = $this->height + 1;
     } else {
       throw new RunTimeException('Stack is full!');
     }
   }
 
-  public function pop() {
+  public function pop(): mixed {
     if ($this->isEmpty()) {
       // jika stack kosong
       throw new RunTimeException('Stack is empty!');
@@ -57,27 +57,31 @@ class Stack {
     }
   }
 
-  public function top() {
+  public function top(): mixed {
     // dapatkan item teratas
-    return $this->stack[$this->height];
+    if ($this->isEmpty()) {
+      throw new RunTimeException('Stack is empty!');
+    } else {
+      return $this->stack[$this->height];
+    }
   }
 
-  public function getHeight() {
+  public function getHeight(): int {
     // dapatkan tinggi stack
     return $this->height;
   }
 
-  public function isEmpty() {
+  public function isEmpty(): bool {
     // cek apakah stack kosong
     return empty($this->stack);
   }
 
-  public function isFull() {
+  public function isFull(): bool {
     // cek apakah stack penuh
     return $this->height === $this->limit;
   }
 
-  public function clear() {
+  public function clear(): void {
     // hapus semua item dari stack
     $this->stack = [];
     $this->height = 0;

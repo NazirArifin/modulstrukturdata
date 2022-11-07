@@ -57,23 +57,24 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami penggunaan stack dalam evaluasi ek
 <?php
 class Stack {
   private array $stack = [];
+  private int $height = 0; 
   private int $limit;
 
   public function __construct($limit = 10) {
     $this->limit = $limit;
   }
 
-  public function push($item) {
+  public function push($item): void {
     if ($this->height < $this->limit) {
-      $this->stack[$this->height] = $item;
       $this->height = $this->height + 1;
+      $this->stack[$this->height] = $item;
     } else {
       // STACK OVERFLOW
       throw new RunTimeException('Stack is full!');
     }
   }
 
-  public function pop() {
+  public function pop(): mixed {
     if ($this->isEmpty()) {
       // STACK UNDERFLOW
       throw new RunTimeException('Stack is empty!');
@@ -85,12 +86,21 @@ class Stack {
     }
   }
 
-  public function top() {
-    return $this->stack[$this->height];
+  public function top(): mixed {
+    if ($this->isEmpty()) {
+      // STACK UNDERFLOW
+      throw new RunTimeException('Stack is empty!');
+    } else {
+      return $this->stack[$this->height];
+    }
   }
 
-  public function isEmpty() {
+  public function isEmpty(): bool {
     return empty($this->stack);
+  }
+
+  public function toString(): string {
+    return implode('', $this->stack);
   }
 }
 ```
@@ -116,7 +126,7 @@ class Converter {
   }
 
   // operand = [0-9], atau [a-z]
-  private function isOperand($char) {
+  private function isOperand($char): bool {
     $char = strtolower($char);
     // ord adalah fungsi untuk mengubah karakter menjadi kode ASCII
     // 97-122 adalah kode ASCII untuk huruf a-z
@@ -124,15 +134,15 @@ class Converter {
     return (ord($char) >= 97 && ord($char) <= 122) || (ord($char) >= 48 && ord($char) <= 57);
   }
 
-  private function isOperator($char) {
+  private function isOperator($char): bool {
     return ($char == '+' || $char == '-' || $char == '*' || $char == '/' || $char == '^' || $char == '(' || $char == ')');
   }
 
-  private function hasHigherPrecedence($operator1, $operator2) {
+  private function hasHigherPrecedence($operator1, $operator2): bool {
     return ($this->precedence[$operator1] > $this->precedence[$operator2]);
   }
 
-  public function toPostfix() {
+  public function toPostfix(): string {
     $postfix = '';
 
     $operatorStack = new Stack(30);
@@ -191,23 +201,22 @@ class Converter {
     return $outputStack->toString();
   }
 
-  private function reverseInfix() {
+  private function reverseInfix($infix): string {
     // reverse infix, lalu ganti '(' dengan ')' dan sebaliknya
     $reverse = '';
-    for ($i = strlen($this->infix) - 1; $i >= 0; $i--) {
-      $char = $this->infix[$i];
-      if ($char == '(') {
+    for ($i = strlen($infix) - 1; $i >= 0; $i--) {
+      if ($infix[$i] == '(') {
         $reverse .= ')';
-      } else if ($char == ')') {
+      } else if ($infix[$i] == ')') {
         $reverse .= '(';
       } else {
-        $reverse .= $char;
+        $reverse .= $infix[$i];
       }
     }
     return $reverse;
   }
 
-  public function toPrefix() {
+  public function toPrefix(): string {
     $prefix = '';
     // reverse infix
     $this->infix = $this->reverseInfix($this->infix);
@@ -226,7 +235,6 @@ class Converter {
 spl_autoload_register(function ($class) {
   include $class . '.php';
 });
-
 
 $infix = '2+3/4+5*(6-7)^8';
 echo 'Infix: ' . $infix . PHP_EOL;

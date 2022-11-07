@@ -26,26 +26,26 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami dan menerapkan konsep queue dalam 
 ```php
 <?php
 class Queue {
-  private $queue = [];
-  private $limit;
+  protected array $queue = [];
+  protected int $limit;
   // front adalah index pertama queue dalam array
-  private $front = 0;
+  protected int $front = 0;
   // rear adalah index elemen terakhir queue dalam array
-  private $rear = 0;
+  protected int $rear = 0;
 
   public function __construct($limit = 10)  {
     $this->limit = $limit;
   }
 
-  public function isFull() {
+  public function isFull(): bool {
     return count($this->queue) == $this->limit;
   }
 
-  public function isEmpty() {
+  public function isEmpty(): bool {
     return $this->rear == $this->front;
   }
 
-  public function enqueue($item) {
+  public function enqueue(mixed $item): void {
     if (! $this->isFull()) {
       $this->queue[$this->rear] = $item;
       // rear bergerak mundur ke belakang
@@ -61,7 +61,7 @@ class Queue {
   // - namun, index elemen yang dihapus tidak dapat digunakan lagi
   //
   // disini kita akan menggunakan pendekatan kedua
-  public function dequeue() {
+  public function dequeue(): mixed {
     if ($this->isEmpty()) {
       throw new RunTimeException('Queue is empty!');
     } else {
@@ -72,7 +72,7 @@ class Queue {
     }
   }
 
-  public function printQueue() {
+  public function printQueue(): string {
     return implode(', ', $this->queue);
   }
 }
