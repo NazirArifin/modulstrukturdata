@@ -117,7 +117,7 @@ class Node {
 ```php
 <?php
 class Tree {
-  private Node $root;
+  protected Node $root;
 
   public function __construct(Node $root) {
     $this->root = $root;
