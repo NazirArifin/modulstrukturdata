@@ -114,12 +114,19 @@ class BinarySearchTree {
     return $this->root;
   }
 
+  // fungsi untuk menambahkan node baru pada BST
+  // jika BST masih kosong, maka node baru akan menjadi root
+  // jika BST tidak kosong, maka lakukan langkah berikut:
+  // 1. cari node yang akan menjadi parent dari node baru
+  // 2. jika data pada node baru lebih kecil dari data pada node parent, maka node baru akan menjadi left child dari node parent
+  // 3. jika data pada node baru lebih besar dari data pada node parent, maka node baru akan menjadi right child dari node parent
   public function insert(int $data): void {
     $node = new Node($data);
     if ($this->root === null) {
       $this->root = $node;
       return;
     }
+    // cari node yang akan menjadi parent dari node baru
     $current = $this->root;
     while (true) {
       if ($data < $current->getData()) {
@@ -199,6 +206,36 @@ class BinarySearchTree {
     }
   }
 
+  // traverse BST dengan preorder
+  public function preorder(?Node $node): void {
+    if ($node === null) {
+      return;
+    }
+    echo $node->getData() . " ";
+    $this->preorder($node->getLeft());
+    $this->preorder($node->getRight());
+  }
+
+  // traverse BST dengan inorder
+  public function inorder(?Node $node): void {
+    if ($node === null) {
+      return;
+    }
+    $this->inorder($node->getLeft());
+    echo $node->getData() . " ";
+    $this->inorder($node->getRight());
+  }
+
+  // traverse BST dengan postorder
+  public function postorder(?Node $node): void {
+    if ($node === null) {
+      return;
+    }
+    $this->postorder($node->getLeft());
+    $this->postorder($node->getRight());
+    echo $node->getData() . " ";
+  }
+
   public function traverse(Node $node, int $level = 0): void {
     echo str_repeat(' ', $level * 4) . $node->getData() . PHP_EOL;
     foreach ($node->getChildren() as $child) {
@@ -229,6 +266,16 @@ foreach ([10, 5, 15, 3, 7, 12, 18, 1, 4, 6, 8, 11, 13, 16, 19] as $a) {
   $bst->insert($a);
 }
 $bst->traverse($bst->getRoot());
+
+echo PHP_EOL;
+echo 'Preorder: ' . PHP_EOL;
+$bst->preorder($bst->getRoot());
+echo PHP_EOL;
+echo 'Inorder: ' . PHP_EOL;
+$bst->inorder($bst->getRoot());
+echo PHP_EOL;
+echo 'Postorder: ' . PHP_EOL;
+$bst->postorder($bst->getRoot());
 ```
 
 - Pada kode di atas, kita membuat object dari class __"BinarySearchTree"__ dan memasukkan beberapa data ke dalam tree. Kemudian kita menampilkan isi dari tree dengan memanggil method __"traverse"__.
