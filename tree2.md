@@ -1,6 +1,6 @@
-# Modul 8 - Binary Search Tree (BST) & Heap
+# Modul 8 - Binary Search Tree (BST)
 
-Tujuan Pembelajaran: Mahasiswa dapat memahami konsep dan implementasi struktur data Heap dengan baik
+Tujuan Pembelajaran: Mahasiswa dapat memahami konsep dan implementasi struktur data Binary Search Tree (BST). dengan baik
 
 ## Persiapan
 
@@ -37,15 +37,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep dan implementasi struktur d
 
 ![Traversal](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Preorder-from-Inorder-and-Postorder-traversals.jpg)
 
-### Heap
 
-- Heap adalah struktur data yang mirip dengan tree, namun memiliki sifat yang berbeda. Heap adalah struktur data yang mempunyai sifat _Complete Binary Tree_ , artinya setiap level dari tree tersebut terisi secara penuh, kecuali level terakhir. Level terakhir dari tree tersebut terisi dari kiri ke kanan. 
-- Heap mempunyai dua jenis, yaitu _max heap_ dan _min heap_. _Max heap_ adalah tree yang mempunyai sifat dimana setiap node mempunyai nilai yang lebih besar dari node-node anaknya. _Min heap_ adalah tree yang mempunyai sifat dimana setiap node mempunyai nilai yang lebih kecil dari node-node anaknya. 
-- Heap mempunyai dua operasi dasar, yaitu _insert_ dan _delete_. Operasi _insert_ digunakan untuk memasukkan data ke dalam tree. Operasi _delete_ digunakan untuk menghapus data dari tree. Operasi _delete_ mempunyai dua jenis, yaitu _delete max_ dan _delete min_. Operasi _delete max_ digunakan untuk menghapus node dengan nilai tertinggi dari tree. Operasi _delete min_ digunakan untuk menghapus node dengan nilai terendah dari tree.
-
-![Heap](https://www.geeksforgeeks.org/wp-content/uploads/MinHeapAndMaxHeap.png)
-
-## Praktikum 1
+## Praktikum 
 
 ### Binary Search Tree
 
@@ -265,11 +258,8 @@ $bst->traverse($bst->getRoot());
 
 ## Tugas
 
-- Buatlah program untuk mengurutkan data secara descending menggunakan binary search tree.
+- Buatlah program untuk mengurutkan data secara descending menggunakan binary search tree dengan menggunakan method __"insert"__ yang telah disediakan.
 
-## Praktikum 2
-
-### Heap
 
 
 
