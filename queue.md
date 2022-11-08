@@ -15,6 +15,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami dan menerapkan konsep queue dalam 
 
 - Bagian antrian yang paling depan disebut dengan __front__ / __head__ dan bagian antrian yang paling belakang disebut dengan __rear__ / __tail__.
 
+![Queue](https://media.geeksforgeeks.org/wp-content/uploads/20220816162225/Queue.png)
+
 - Seperti _stack_, queue dapat direpresentasikan dengan array, namun untuk queue, elemen yang baru masuk akan diletakkan di bagian belakang array, sedangkan elemen yang keluar akan diletakkan di bagian depan array.
 
 - Untuk mengimplementasikan queue, kita perlu mengetahui dua buah variabel, yaitu __front__ dan __rear__. Variabel __front__ akan menunjuk ke elemen pertama yang ada di dalam queue, sedangkan variabel __rear__ akan menunjuk ke elemen terakhir yang ada di dalam queue.

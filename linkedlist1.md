@@ -11,6 +11,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami operasi-operasi dasar yang ada dal
 
 ### Linked List
 
+![Linked List](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2013/03/Linkedlist.png)
+
 - Linked list merupakan kumpulan data yang terdiri dari node-node yang saling terhubung. Setiap node memiliki data dan pointer yang menunjuk ke node selanjutnya. Linked list memiliki dua jenis, yaitu __linear__ dan __circular__.
 
 - Dengan array kita dapat menyimpan data secara linear, tapi array memiliki keterbatasan yang tidak dapat diubah ukurannya. Sedangkan linked list dapat menyimpan data secara linear dan dapat diubah ukurannya.

@@ -14,6 +14,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami operasi-operasi dasar yang ada dal
 
 - Untuk menambahkan data pada bagian atas tumpukan dilakukan operasi __push__, sedangkan untuk menghapus atau memindahkan data dari tempat atas maka dilakukan operasi __pop__.
 
+![Stack](https://media.geeksforgeeks.org/wp-content/uploads/20220714004311/Stack-660x566.png)
+
 ### Praktikum
 
 - Buat file baru dengan file __"Stack.php"__ dan kemudian ketikkan kode berikut:

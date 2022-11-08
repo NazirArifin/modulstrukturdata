@@ -11,6 +11,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami penggunaan stack dalam evaluasi ek
 ## Materi
 ### Ekspresi Aritmatika
 
+![Ekspresi Aritmatika](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaOYZ9rF255Iv2siv048dkMCg4v4MaKDtwhg&usqp=CAU)
+
 - Stack adalah struktur data yang sangat efektif untuk melakukan evaluasi aritmatika dalam bahasa pemrograman. Ekspresi aritmatika terdiri dari __Operand__ dan __Operator__. Selain itu ekspresi aritmatika juga bisa melibatkan tanda kurung seperti kurang buka dan kurung tutup.
 
 - Contoh ekspresi aritmatika: __```A+(B-C)```__

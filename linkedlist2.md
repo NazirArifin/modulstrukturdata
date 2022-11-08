@@ -11,6 +11,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami dan menerapkan konsep Dolby & Circ
 
 ### Doubly Linked List
 
+![Doubly Linked List](https://media.geeksforgeeks.org/wp-content/uploads/Circular-doubly-linked-list.png)
+
 - Doubly Linked List adalah linked list yang memiliki pointer ke node selanjutnya dan node sebelumnya. Sedangkan circular linked list memiliki pointer ke node selanjutnya dan node sebelumnya. Pointer pada node terakhir akan menunjuk ke node pertama.
 
 - Kelebihan dari double linked list adalah data dapat dicari kedua arah, baik dari depan maupun belakang. Sedangkan kelemahan dari double linked list adalah membutuhkan memori lebih banyak karena harus menyimpan pointer ke node sebelumnya.

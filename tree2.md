@@ -17,6 +17,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep dan implementasi struktur d
   - Perfect Binary Tree: Binary Tree yang setiap level terisi secara penuh, dan setiap node memiliki 2 buah child.
   - Balanced Binary Tree: Binary Tree yang memiliki tinggi yang sama di setiap levelnya. Jika tinggi dari setiap levelnya berbeda, maka Binary Tree tersebut tidak disebut Balanced Binary Tree.
 
+![Binary Tree](https://pics.me.me/tevits-331t-ttt-go-studying-data-structures-binary-tree-on-58744783.png)
+
 ### Binary Search Tree
 - Binary Search Tree (BST) adalah struktur data tree yang berbasis node biner yang mana memiliki properti berikut:
   - Semua node di sub-tree kiri memiliki nilai yang lebih kecil dari node induknya

@@ -14,6 +14,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami operasi-operasi dasar yang ada dal
 
 - Kita dapat menyatakan bahwa struktur data tree memiliki __root__ (akar), __brances__ (ranting), dan __leaves__ (daun). Root adalah node yang tidak memiliki parent, branches adalah node yang memiliki parent dan subnode, dan leaves adalah node yang memiliki parent dan tidak memiliki subnode.
 
+![Tree](https://res.cloudinary.com/practicaldev/image/fetch/s--GLixMccZ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lolxr50mxeeh4uor8kpa.jpg)
+
 - Beberapa istilah dalam struktur data Tree adalah:
 
   - __Parent__: Node yang menjadi induk dari node lain
@@ -48,7 +50,7 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami operasi-operasi dasar yang ada dal
 
   ![Contoh Tree](https://media.geeksforgeeks.org/wp-content/uploads/20211127152300/imi-300x258.png)
 
-- Pada gambar diatas, Node A adalah node root. Node B adalah parent dari D dan E. D dan F adalah sibling. D, E, F dan G adalah node leaf. A dan B adalah ancestor dari E. E dan G adalah descendant dari A. Level dari node E adalah 2.
+- Pada gambar diatas, Node A adalah node root. Node B adalah parent dari D dan E. D dan E adalah sibling. D, E, F dan G adalah node leaf. A dan B adalah ancestor dari E. E dan G adalah descendant dari A. Level dari node E adalah 2.
 
 ### Aplikasi yang menggunakan Tree
 
