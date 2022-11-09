@@ -192,3 +192,5 @@ try {
 - Tambahkan method __"removeAt(int $index)"__ (untuk menghapus node pada index tertentu).
 - Tambahkan method __"remove(Node $node)"__ (untuk menghapus node tertentu).
 - Tambahkan method __"removeAll(Node $node)"__ (untuk menghapus semua node yang memiliki data yang sama dengan node yang diberikan).
+
+- Pastikan setelah penghapusan node, pointer pada node sebelum dan sesudah node yang dihapus masih benar.

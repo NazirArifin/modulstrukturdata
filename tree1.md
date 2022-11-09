@@ -233,4 +233,8 @@ if ($found) {
 
 ## Tugas
 
-- Buatlah class turunan dari __"Tree"__ dan tambahkan method untuk menghitung jumlah node, jumlah leaf, dan jumlah tinggi dari tree.
+- Buatlah class turunan dari __"Tree"__ dan tambahkan method:
+    
+      - __"getDepth"__: untuk menghitung kedalaman dari tree
+      - __"nodeCount"__: untuk menghitung jumlah node dalam tree
+      - __"leafCount"__: untuk menghitung jumlah leaf dalam tree

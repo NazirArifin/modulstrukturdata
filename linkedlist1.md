@@ -237,6 +237,7 @@ try {
 ## Tugas
 
 - Buat class __Stack__ yang memiliki method __push()__, __pop()__, dan __print()__ yang menggunakan linked list sebagai struktur data dasarnya.
+- Buat class __Queue__ yang memiliki method __enqueue()__, __dequeue()__, dan __print()__ yang menggunakan linked list sebagai struktur data dasarnya.
 
 
 
