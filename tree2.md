@@ -106,7 +106,7 @@ class Node {
 ```php
 <?php
 class BinarySearchTree {
-  private ?Node $root;
+  protected ?Node $root;
 
   public function __construct() {
     $this->root = null;
@@ -239,9 +239,21 @@ class BinarySearchTree {
   }
 
   public function traverse(Node $node, int $level = 0): void {
-    echo str_repeat(' ', $level * 4) . $node->getData() . PHP_EOL;
-    foreach ($node->getChildren() as $child) {
-      $this->traverse($child, $level + 1);
+    // hanya jika node tidak null
+    if ($node !== null) {
+      // traverse ke kanan hanya jika node memiliki right child
+      if ($node->getRight() !== null) {
+        $this->traverse($node->getRight(), $level + 1);
+      }
+      // tampilkan node
+      for ($i = 0; $i < $level; $i++) {
+        echo "   ";
+      }
+      echo $node->getData() . PHP_EOL;
+      // traverse ke kiri hanya jika node memiliki left child
+      if ($node->getLeft() !== null) {
+        $this->traverse($node->getLeft(), $level + 1);
+      }
     }
   }
 }
@@ -285,21 +297,21 @@ $bst->postorder($bst->getRoot());
 - Jika kita jalankan program dengan perintah __"php index.php"__ maka akan muncul output seperti berikut:
 
 ```bash
+        19
+      18
+         16
+   15
+         13
+      12
+         11
 10
-    5
-        3
-            1
-            4
-        7
-            6
-            8
-    15
-        12
-            11
-            13
-        18
-            16
-            19
+         8
+      7
+         6
+   5
+         4
+      3
+         1
 ```
 
 - Pada output di atas, kita dapat melihat bahwa data pada tree telah terurut secara ascending. Dimulai dari data terkecil hingga data terbesar. Node 10 merupakan node root dari tree. Node 5 dan 15 merupakan node anak dari node 10. Node 3 dan 7 merupakan node anak dari node 5. Node 12 dan 18 merupakan node anak dari node 15. 
@@ -307,7 +319,12 @@ $bst->postorder($bst->getRoot());
 
 ## Tugas
 
-- Buatlah program untuk mengurutkan data secara descending menggunakan binary search tree dengan menggunakan method __"insert"__ yang telah disediakan.
+- Buat class turunan dari class __"BinarySearchTree"__ dengan penambahan method:
+  
+    - __"getMin"__ untuk mengembalikan nilai data terkecil dari tree. 
+    - __"getMax"__ untuk mengembalikan nilai data terbesar dari tree.
+    - __"countBetween"__ untuk mengembalikan jumlah node yang berada diantara 10 -15.
+    - __"countLeaf"__ untuk mengembalikan jumlah node yang tidak memiliki child.
 
 
 
