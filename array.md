@@ -320,11 +320,11 @@ $data = [
   ],
 ];
 ```
-- Tampilkan data array yang memiliki umur lebih dari 21 tahun
-- Tampilkan data array yang memiliki hobi "Membaca"
-- Tampilkan data array yang memiliki umur lebih dari 21 tahun dan memiliki hobi "Membaca"
-- Tampilkan hobi Euis
-- Tampilkan hobi yang paling banyak diikuti oleh orang yang memiliki umur lebih dari 21 tahun
+- Tampilkan nama orang yang memiliki umur lebih dari 21 tahun menggunakan fungsi __`array_filter()`__
+- Tampilkan nama orang yang memiliki hobi "Membaca" menggunakan fungsi __`array_column`__ dan __`array_filter()`__
+- Tampilkan nama orang yang memiliki umur lebih dari 21 tahun dan memiliki hobi "Membaca" menggunakan fungsi __`array_filter()`__ dan __`array_column()`__
+- Tampilkan hobi yang paling banyak diikuti oleh orang yang memiliki umur lebih dari 21 tahun menggunakan fungsi __`array_column()`__, __`array_filter()`__ dan __`array_reduce()`__
+- Ubah semua nama menjadi huruf besar yang orang yang memiliki hobi memancing menggunakan fungsi __`array_column()`__, __`array_filter()`__ dan __`array_map()`__ kemudian tampilkan.
 
 
 
