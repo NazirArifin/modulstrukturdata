@@ -325,7 +325,3 @@ $bst->postorder($bst->getRoot());
     - __"getMax"__ untuk mengembalikan nilai data terbesar dari tree.
     - __"countBetween"__ untuk mengembalikan jumlah node yang berada diantara 10 -15.
     - __"countLeaf"__ untuk mengembalikan jumlah node yang tidak memiliki child.
-
-
-
-
