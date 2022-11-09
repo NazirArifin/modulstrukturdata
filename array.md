@@ -99,16 +99,13 @@ echo array_key_exists(0, $angka); // 1
 echo array_key_exists(6, $angka); // 
 ```
 
-- Untuk memecah (_unpack_) array dapat menggunakan fungsi __`list()`__ atau menggunakan __```...```__ di depan array yang akan dipecah. Contoh:
+- Untuk memecah (_unpack_) array dapat menggunakan fungsi __`list()`__ atau menggunakan __```...$array```__ untuk mengekstrak array. Contoh:
 ```php
 <?php
 $angka = [1, 2, 3, 4, 5];
 list($a, $b, $c, $d, $e) = $angka;
 echo $a; // 1
 echo $b; // 2
-
-$a = ...$angka;
-echo $a; // 1
 
 $array = [1, 2, 3];
 $array2 = [...$array, 4, 5]; // [1, 2, 3, 4, 5]
