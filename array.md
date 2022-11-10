@@ -268,13 +268,13 @@ $jumlahHuruf = array_filter($jumlahHuruf, function ($a) {
 });
 $jumlahVokal = array_reduce(array_filter($jumlahHuruf, function ($a) {
   return in_array($a, ['a', 'i', 'u', 'e', 'o']);
-}), function ($a, $b) {
-  return $a + 1;
+}), function ($accumulator, $current) {
+  return $accumulator + 1;
 });
 $jumlahKonsonan = array_reduce(array_filter($jumlahHuruf, function ($a) {
   return !in_array($a, ['a', 'i', 'u', 'e', 'o']);
-}), function ($a, $b) {
-  return $a + 1;
+}), function ($accumulator, $current) {
+  return $accumulator + 1;
 });
 echo "Jumlah huruf vokal: " . $jumlahVokal . PHP_EOL;
 echo "Jumlah huruf konsonan: " . $jumlahKonsonan . PHP_EOL;
