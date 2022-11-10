@@ -256,25 +256,25 @@ echo "Jumlah huruf vokal: " . $jumlahVokal . PHP_EOL;
 echo "Jumlah huruf konsonan: " . $jumlahKonsonan . PHP_EOL;
 ```
 
-- Program untuk menghitung jumlah huruf vokal dan konsonan dari sebuah kalimat dengan menggunakan fungsi __`array_count_values()`__ dan __`array_filter()`__ dan __`array_reduce()`__
+- Program untuk menghitung jumlah huruf vokal dan konsonan dari sebuah kalimat dengan menggunakan fungsi __`str_split()`__ dan __`array_filter()`__ dan __`array_reduce()`__
 ```php
 <?php
 $kalimat = "Saya sedang belajar PHP";
 $jumlahVokal = 0;
 $jumlahKonsonan = 0;
-$jumlahHuruf = array_count_values(str_split($kalimat));
+$jumlahHuruf = str_split($kalimat);
 $jumlahHuruf = array_filter($jumlahHuruf, function ($a) {
   return $a != ' ';
 });
 $jumlahVokal = array_reduce(array_filter($jumlahHuruf, function ($a) {
   return in_array($a, ['a', 'i', 'u', 'e', 'o']);
 }), function ($a, $b) {
-  return $a + $b;
+  return $a + 1;
 });
 $jumlahKonsonan = array_reduce(array_filter($jumlahHuruf, function ($a) {
   return !in_array($a, ['a', 'i', 'u', 'e', 'o']);
 }), function ($a, $b) {
-  return $a + $b;
+  return $a + 1;
 });
 echo "Jumlah huruf vokal: " . $jumlahVokal . PHP_EOL;
 echo "Jumlah huruf konsonan: " . $jumlahKonsonan . PHP_EOL;
