@@ -1,11 +1,11 @@
 # Modul 8 - Binary Search Tree (BST)
 
-Tujuan Pembelajaran: Mahasiswa dapat memahami konsep dan implementasi struktur data Binary Search Tree (BST). dengan baik
+Tujuan Pembelajaran: Mahasiswa dapat memahami konsep dan implementasi struktur data Binary Search Tree (BST) dengan baik
 
 ## Persiapan
 
 - Berdoa agar lancar dalam belajar, bagi yang membawa hp harap hp nya di _silence_ atau sekalian dimatikan
-- __Struktur data bukan merupakan materi yang mudah, jadi jangan terlalu cepat putus asa jika tidak mengerti materi ini. Kesukaran materi ini akan membantu kita dalam memahami materi-materi yang lebih sulit di kemudian hari. Jadi, jangan putus asa dan teruslah belajar. Semangat!!!__
+- _Tidak penting apa yang orang lain pikirkan tentang kita, yang penting adalah apa yang kita pikirkan tentang diri kita sendiri_
 
 ## Materi
 
@@ -34,8 +34,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep dan implementasi struktur d
   - Traversal (Inorder, Preorder, Postorder)
 
 - Inorder Traversal: Proses traversal dimulai dari node paling kiri, kemudian dilanjutkan ke node induknya, dan terakhir ke node paling kanan. Proses traversal ini akan menghasilkan data yang terurut secara ascending.
-- Preorder Traversal: Proses traversal dimulai dari node induk, kemudian dilanjutkan ke node paling kiri, dan terakhir ke node paling kanan. Proses traversal ini akan menghasilkan data yang terurut secara descending.
-- Postorder Traversal: Proses traversal dimulai dari node paling kiri, kemudian dilanjutkan ke node paling kanan, dan terakhir ke node induknya. Proses traversal ini akan menghasilkan data yang terurut secara descending.
+- Preorder Traversal: Proses traversal dimulai dari node induk, kemudian dilanjutkan ke node paling kiri, dan terakhir ke node paling kanan. Proses ini digunakan untuk membuat _copy_ dari BST.
+- Postorder Traversal: Proses traversal dimulai dari node paling kiri, kemudian dilanjutkan ke node paling kanan, dan terakhir ke node induknya. Proses ini digunakan untuk menghapus node pada BST.
 
 ![Traversal](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Preorder-from-Inorder-and-Postorder-traversals.jpg)
 
@@ -209,16 +209,18 @@ class BinarySearchTree {
   }
 
   // traverse BST dengan preorder
+  // visit root, traverse left subtree, traverse right subtree
   public function preorder(?Node $node): void {
     if ($node === null) {
       return;
     }
-    echo $node->getData() . " ";
+    echo $node->getData() . ' ';
     $this->preorder($node->getLeft());
     $this->preorder($node->getRight());
   }
 
   // traverse BST dengan inorder
+  // traverse left subtree, visit root, traverse right subtree
   public function inorder(?Node $node): void {
     if ($node === null) {
       return;
@@ -229,6 +231,7 @@ class BinarySearchTree {
   }
 
   // traverse BST dengan postorder
+  // traverse left subtree, traverse right subtree, visit root
   public function postorder(?Node $node): void {
     if ($node === null) {
       return;
@@ -265,6 +268,9 @@ class BinarySearchTree {
   - __"insert"__ untuk memasukkan data ke dalam tree. 
   - __"find"__ untuk mencari data pada tree. 
   - __"remove"__ untuk menghapus data pada tree. 
+  - __"preorder"__ untuk melakukan traverse tree dengan preorder.
+  - __"inorder"__ untuk melakukan traverse tree dengan inorder.
+  - __"postorder"__ untuk melakukan traverse tree dengan postorder.
   - __"traverse"__ untuk menampilkan data pada tree.
 
 - Selanjutnya kita buat file __"index.php"__ untuk menjalankan program. Ketikkan kode berikut:

@@ -12,6 +12,7 @@ Modul Praktikum Struktur Data (PHP Version)
 - [Linked List 2 - Dolby & Circular](https://github.com/NazirArifin/modulstrukturdata/blob/master/linkedlist2.md)
 - [Tree - Operasi Dasar Tree](https://github.com/NazirArifin/modulstrukturdata/blob/master/tree1.md)
 - [Binary Search Tree (BST)](https://github.com/NazirArifin/modulstrukturdata/blob/master/tree2.md)
+- [Graph - Operasi Dasar Graph)](https://github.com/NazirArifin/modulstrukturdata/blob/master/graph.md)
 
 ---
 
