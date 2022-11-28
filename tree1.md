@@ -235,6 +235,6 @@ if ($found) {
 
 - Buatlah class turunan dari __"Tree"__ dan tambahkan method:
     
-      - __"getDepth"__: untuk menghitung kedalaman dari tree
-      - __"nodeCount"__: untuk menghitung jumlah node dalam tree
-      - __"leafCount"__: untuk menghitung jumlah leaf dalam tree
+  - __"getDepth"__: untuk menghitung kedalaman dari tree
+  - __"nodeCount"__: untuk menghitung jumlah node dalam tree
+  - __"leafCount"__: untuk menghitung jumlah leaf dalam tree
