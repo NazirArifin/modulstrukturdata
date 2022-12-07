@@ -110,7 +110,6 @@ class Stack {
 - Buat file __"Converter.php"__ lalu ketikkan kode berikut:
 
 ```php
-<?php
 class Converter {
   private string $infix;
   private array $precedence = [
@@ -128,7 +127,7 @@ class Converter {
   }
 
   // operand = [0-9], atau [a-z]
-  private function isOperand(string $char): bool {
+  protected function isOperand(string $char): bool {
     $char = strtolower($char);
     // ord adalah fungsi untuk mengubah karakter menjadi kode ASCII
     // 97-122 adalah kode ASCII untuk huruf a-z
@@ -136,7 +135,7 @@ class Converter {
     return (ord($char) >= 97 && ord($char) <= 122) || (ord($char) >= 48 && ord($char) <= 57);
   }
 
-  private function isOperator(string $char): bool {
+  protected function isOperator(string $char): bool {
     return ($char == '+' || $char == '-' || $char == '*' || $char == '/' || $char == '^' || $char == '(' || $char == ')');
   }
 
@@ -251,4 +250,11 @@ echo 'Prefix: ' . $converterInfix->toPrefix() . PHP_EOL;
 
 ## Tugas
 
-- Buatlah class "Calculator" untuk menghitung hasil dari postfix dan prefix yang sudah dikonversi menggunakan struktur data "Stack" yang sudah dibuat sebelumnya.
+- Buat class `Calculator` yang meng-extends class "Converter" untuk menambahkan method "calculate" yang akan menghitung hasil dari postfix. Algoritma yang digunakan adalah sebagai berikut:
+
+  1. Buat stack baru
+  2. Untuk setiap karakter pada postfix:
+     - Jika karakter adalah operand, maka masukkan ke stack
+     - Jika karakter adalah operator, maka pop 2 buah operand dari stack, lalu hitung hasilnya berdasarkan operator yang ditemukan, lalu masukkan hasilnya ke stack
+  3. Pop stack dan masukkan ke variable hasil
+  4. Return hasil

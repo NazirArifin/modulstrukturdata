@@ -123,3 +123,4 @@ $$G = (V, E)$$
 
 ## Praktikum
 
+- Untuk penerapan graph, akan digunakan 
