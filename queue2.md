@@ -176,11 +176,19 @@ echo PHP_EOL;
 - Buatlah class CircularQueue dengan ketentuan menggunakan pseudocode berikut:
 
 ```text
+- createQueue(Q)
 - enqueue(Q, x)
 - dequeue(Q)
 - isEmpty(Q)
 - isFull(Q)
 - printQueue(Q)
+```
+
+- Pseudocode untuk createQueue adalah sebagai berikut:
+
+```text
+- Q.front = -1
+- Q.rear = -1
 ```
 
 - Pseudocode untuk enqueue adalah sebagai berikut:
